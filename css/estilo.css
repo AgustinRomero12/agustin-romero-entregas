@@ -1,0 +1,133 @@
+/*codigo general*/
+h1,h3 {
+    color: rgb(248, 42, 77);
+}
+p {
+    color: black;
+}
+main {
+    color: burlywood;
+}
+ li {
+    color: black;
+
+} 
+
+div h2 {
+    color:black
+}
+.grid{
+
+    display: grid;
+    grid-template-areas:
+    " header header header"
+    "main main main"
+    "footer footer footer";
+    grid-template-columns: 30% 40% 30%;
+    grid-template-rows: auto auto auto;
+}
+header{grid-area: header;}
+main{grid-area: main;}
+footer{grid-area: footer;}
+.header, ul{display: flex;}
+li{list-style-type: none;}
+a{text-decoration: none;padding: 15px;}
+.IMG-MAIN{width:auto;}
+h1 {color: pink;}
+div h2 {color:black}
+header,footer{ 
+    Background-color: pink;
+
+}
+
+/*intervalo mobile*/
+@media screen and (max-width:768px) {
+    .header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    ul{flex-wrap: wrap }
+    a{font-size: 1.5rem;}
+    footer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;     
+    }
+    .main {
+        display: grid;
+        grid-template-areas: 
+        "encabezado"
+        " imagen"
+        "texto";
+        grid-template-columns: 100%;
+        grid-template-rows:repeat(4, auto);
+
+    }
+    .encabezado {grid-area: encabezado;}
+    .imagen {grid-area: imagen;}
+    .texto {grid-area: texto;}
+
+    .IMG-MAIN{ width: 400px; height: 100%;}
+    footer {
+        grid-area: footer;
+        display: flex;
+        flex-direction: column;
+
+    }
+    .header{flex-wrap: wrap; display: flex; justify-content: end;}
+    .UL { display: flex; justify-content: center;
+    
+    
+    
+}
+
+/*intervalo desktop*/
+@media screen and (min-width:1024px) {
+    .header{display: flex;
+        width: 100%;
+        justify-content: flex-end;}
+    a{font-size:  2rem;}
+    } 
+    .main {
+        display: grid;
+        grid-template-areas: 
+        "encabezado"
+        " imagen"
+        "texto";
+        grid-template-columns: 100%;
+        grid-template-rows:repeat(4, auto);
+    }
+    .encabezado {grid-area: encabezado;}
+    .imagen {grid-area: imagen;}
+    .texto {grid-area: texto;}
+    footer {
+        grid-area: footer;
+        display: flex;
+        justify-content: space-between;
+    }
+
+/* ANIMACION */
+/* 1er parte: linea de tiempo */
+@keyframes Logoanimado {
+    0%{transform:rotateX(100deg);}
+    25%{transform:scale(2,2);}
+    50%{transform:skewX(90deg);}
+    75%{transform:translateY(-20px);}
+    100%{transform:rotate(0deg);}
+}
+/* 2da parte: asignacion de la animacion */
+footer img {
+    animation-name: Logoanimado;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+    animation-duration: 2s;
+    animation-delay: 1s;
+}
+@keyframes aparecer {
+    0%{opacity:0;}
+    100%{opacity: 1;}
+}
+
+}
